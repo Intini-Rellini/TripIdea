@@ -1,0 +1,56 @@
+Caso d'uso UC1: iscrizione nuovo utente
+- Un nuovo utente vuole iscriversi al sito.
+- Non avendo le credenziali per accedere, nella home preme il tasto login e successivamente il link "qui" per accedere alla form di registrazione
+- L'utente inserisce i propri dati (username, password, ripeti password, data di nascita) e invia
+- Se ci sono degli errori (ad esempio campi nulli, utente non maggiorenne, ecc.) il sistema li mostra, altrimenti mostra in una pagina il riepilogo dei dati salvati nel database
+
+Caso d'uso UC2: visualizzazione della propria pagina personale
+- L'utente vuole visualizzare la propria pagina personale
+- L'utente clicca su login e accede al sito tramite username e password
+- Il sistema mostra in una pagina l'elenco dei viaggi e dei commenti inseriti dall'utente
+- L'utente se vuole può cliccare sul nome di una scheda di viaggio per aprirla
+
+Caso d'uso UC3: creazione nuova scheda di viaggio
+- L'utente vuole creare una scheda di viaggio
+- L'utente si autentica e accede alla propia pagina personale, dove clicca il tasto "inserisci una nuova scheda di viaggio"
+- L'utente inserisce i dati relativi al viaggio (titolo, descrizione, una o più regioni, data di inizio e data di fine)
+- Se ci sono degli errori (ad esempio campi nulli, o date non coerenti) il sistema li mostra, altrimenti salva i dati del viaggio e indirizza l'utente verso una pagina per l'inserimento di una foto
+- Se lo desidera l'utente può caricare una foto del viaggio, altrimenti può saltare questo passaggio (in quest'ultimo caso verrà associata una foto di default)
+
+Caso d'uso UC4: ricerca di un viaggio per regione
+- L'utente (anche non autenticato) vuole visualizzare le schede di viaggio per una certa regione.
+- Dalla home l'utente clicca il pulsante visita, il sistema mostra una mappa interattiva dell'Italia
+- L'utente clicca su una regione e il sistema mostra sulla stessa pagina il nome, lo stemma della regione e il contenuto della relativa pagina di wikipedia
+- L'utente clicca il tasto "vai ai viaggi" e viene indirizzato su una pagina con la lista dei viaggi riguardanti la regione selezionata
+
+Caso d'uso UC5: inserimento di un commento ad una scheda di viaggio
+- L'utente autenticato vuole commentare una scheda di viaggio di un altro utente
+- L'utente clicca il pulsante visita, sceglie la regione del viaggio e apre la scheda del viaggio che vuole commentare
+- L'utente nell'apposita casella inserisce il commento e preme il tasto "invia"
+- Il sistema registra il commento e mostra la scheda di viaggio con l'elenco dei commenti aggiornato
+
+Caso d'uso UC6: eliminazione di un viaggio/commento
+- L'utente autenticato vuole eliminare una propria scheda di viaggio o un proprio commento
+   a- L'utente accede alla sua pagina personale e clicca il tasto "elimina" relativo all'elemento che vuole eliminare
+   b- L'utente accede ad una scheda di viaggio tramite la ricerca per regioni e clicca il tasto "elimina" relativo all'elemento che vuole eliminare (il tasto è visibile esclusivamente per gli elementi inseriti da lui)
+- Il sistema rimuove dal database l'elemento
+   a- Nel caso del viaggio rimuove il viaggio e tutti i commenti relativi ad esso
+- Il sistema mostra all'utente la sua pagina personale con la notifica dell'eliminazione avvenuta
+
+Caso d'uso UC7: Visualizzazione di tutti gli utenti e dei relativi viaggi/commenti da parte dell'amministratore
+- L'amministratore vuole visualizzare gli utenti e gli elementi che hanno inserito
+- L'amministratore accede al sistema cliccando il tasto "area riservata" e inserendo le sue credenziali di amministratore
+- Se l'autenticazione è valida il sistema mostra una pagina con tutti gli utenti iscritti
+- L'amministratore può accede a tutti i viaggi o a tutti i commenti di un utente cliccando sui relativi tasti
+- Il sistema mostra il risultato della richiesta
+
+Caso d'uso UC8: disattivazione dell'account di un utente da parte dell'amministratore
+- L'amministratore vuole disattivare l'account di un utente
+- L'amministratore accede all'elenco degli utenti nell'area riservata e seleziona il tasto "banna/attiva"
+- Il sistema memorizza la richiesta e mostra all'amministratore la pagina degli utenti aggiornata
+
+Caso d'uso UC9: eliminazione di un viaggio/commento da parte dell'amministratore
+- L'amministratore vuole eliminare un elemento di un utente
+- L'amministratore accede alla lista degli utenti nell'area riservata e seleziona il tasto per mostrare i viaggi o i commenti di un utente
+- L'amministratore clicca il tasto "elimina" relativo all'elemento che vuole eliminare tra quelli mostrati dal sistema
+- Il sistema torna alla pagina degli utenti
